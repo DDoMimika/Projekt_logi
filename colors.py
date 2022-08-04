@@ -1,0 +1,5 @@
+correct_color = "#5b8c5a"
+wrong_color = "#f25347"
+bg_color = "#596157"
+bg_color_plot = "#4b5249"
+plot_color = "#342e32"
