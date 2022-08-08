@@ -2,16 +2,14 @@ import base64
 import struct
 from read_file import read_file
 
-pattern = "<4i16hi3b2ib2i2h"
 
-
-def decode():
+def decode(pattern_decode, pattern_file):
     encodeline = []
-    lines = read_file()
+    lines = read_file(pattern_file)
     for line in lines:
         decodedBytes = base64.b64decode(line)
         decodedStr = decodedBytes
-        unpacked = struct.unpack(pattern, decodedStr)
+        decodedStr = decodedStr
+        unpacked = struct.unpack(pattern_decode, decodedStr)
         encodeline.append(list(unpacked))
-    print(encodeline[0])
     return encodeline

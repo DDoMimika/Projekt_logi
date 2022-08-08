@@ -1,15 +1,13 @@
 import paths
 
-pattern = "*T03"
 
-
-def read_file():
+def read_file(pattern):
     with open(paths.PATH_LOG, "r") as f:
         lines = f.readlines()
-    telemetries_03 = []
+    telemetries = []
     for line in lines:
         if line.find(pattern) != -1:
             line = line.strip()
             l = line.split(" ")
-            telemetries_03.append(l[3])
-    return telemetries_03
+            telemetries.append(l[3])
+    return telemetries
