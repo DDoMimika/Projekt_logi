@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import colors
 
-from return_data import return_dataset
+from read_data_from_file import return_dataset
 
 data = return_dataset()
 gap_p = 12

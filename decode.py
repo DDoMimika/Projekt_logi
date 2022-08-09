@@ -1,6 +1,6 @@
 import base64
 import struct
-from read_file import read_file
+from find_telemetry_in_file import read_file
 
 
 def decode(pattern_decode, pattern_file):

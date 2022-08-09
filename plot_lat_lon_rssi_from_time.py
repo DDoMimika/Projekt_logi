@@ -4,7 +4,7 @@ import mpl_toolkits.mplot3d.axes3d as p3
 import numpy as np
 import colors
 
-from return_data import return_dataset
+from read_data_from_file import return_dataset
 
 p_per_min = 24
 interval_time = 1000
@@ -63,7 +63,7 @@ signal1 = ax.bar3d(
     width,
     depth,
     nheight1[0],
-    color="b",
+    color=colors.rssi1_color,
     shade=True,
 )
 signal2 = ax.bar3d(
@@ -73,7 +73,7 @@ signal2 = ax.bar3d(
     width,
     depth,
     nheight2[0],
-    color="r",
+    color=colors.rssi2_color,
     shade=True,
 )
 
@@ -93,7 +93,7 @@ def animate(i):
         width,
         depth,
         nheight1[i],
-        color="b",
+        color=colors.rssi1_color,
         shade=True,
     )
 
@@ -104,7 +104,7 @@ def animate(i):
         width,
         depth,
         nheight2[i],
-        color="r",
+        color=colors.rssi2_color,
         shade=True,
     )
 
@@ -112,8 +112,8 @@ def animate(i):
 ax.set_xlabel("latitude")
 ax.set_ylabel("longitude")
 ax.set_zlabel("altitude")
-blue_proxy = plt.Rectangle((0, 0), 1, 1, fc="b")
-red_proxy = plt.Rectangle((0, 0), 1, 1, fc="r")
+blue_proxy = plt.Rectangle((0, 0), 1, 1, fc=colors.rssi1_color)
+red_proxy = plt.Rectangle((0, 0), 1, 1, fc=colors.rssi2_color)
 ax.legend([blue_proxy, red_proxy], ["rssi tracker", "rssi radio"])
 anim2 = animation.FuncAnimation(
     fig, animate, frames=None, interval=interval_time, blit=False

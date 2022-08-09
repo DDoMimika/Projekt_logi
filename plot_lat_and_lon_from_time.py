@@ -3,7 +3,7 @@ import matplotlib.animation as animation
 import mpl_toolkits.mplot3d.axes3d as p3
 import colors
 
-from return_data import return_dataset
+from read_data_from_file import return_dataset
 
 data = return_dataset()
 p_per_min = 24

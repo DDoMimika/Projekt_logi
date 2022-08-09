@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import colors
 
 from matplotlib import style
-from return_data import return_dataset
+from read_data_from_file import return_dataset
 
 data = return_dataset()
 
@@ -56,11 +57,11 @@ z2 = np.zeros(len(nheight2))
 width2 = np.ones(len(nheight2))
 depth2 = np.ones(len(nheight2))
 
-ax1.bar3d(nx1, y1, z1, width1, depth1, nheight1, color="b", shade=True)
-ax1.bar3d(nx2, y2, z2, width2, depth2, nheight2, color="r", shade=True)
-blue_proxy = plt.Rectangle((0, 0), 1, 1, fc="b")
-red_proxy = plt.Rectangle((0, 0), 1, 1, fc="r")
-ax1.legend([blue_proxy, red_proxy], ["rssi tracker", "rssi radio"])
+ax1.bar3d(nx1, y1, z1, width1, depth1, nheight1, color=colors.rssi1_color, shade=True)
+ax1.bar3d(nx2, y2, z2, width2, depth2, nheight2, color=colors.rssi2_color, shade=True)
+blue_proxy = plt.Rectangle((0, 0), 1, 1, fc=colors.rssi1_color)
+red_proxy = plt.Rectangle((0, 0), 1, 1, fc=colors.rssi2_color)
+ax1.legend([blue_proxy, red_proxy], ["rssi tracker", "rssi plane"])
 ax1.set_xlabel("time")
 ax1.set_ylabel("")
 ax1.set_zlabel("rssi")
